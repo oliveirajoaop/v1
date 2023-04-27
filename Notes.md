@@ -101,7 +101,29 @@ helm install <chart_name> <chart_link>
 ## Tags Versioning
 
 - Create a new tag on github in tags (0.1.0) First Release
-- Go to your repo, actions, new workflow, select a blank template and paste the code form the example [here](https://github.com/marketplace/actions/github-tag-bump)
+- Go to your repo, actions, new workflow, select a blank template and paste the code form the example below or [here](https://github.com/marketplace/actions/github-tag-bump)
+
+```bash
+name: Bump version
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.17.2 # Don't use @master unless you're happy to test the latest version
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: false
+```
+
 - Rename the work flow to bump.yaml for instance
 - Change the WITH_V: from true (v0.1.0) to false (0.1.0) if you do not wish to have a v in the tag version
 - Commit to the master branch
@@ -188,4 +210,4 @@ curl -L \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/oliveirajoaop/v1/git/refs \
   -d '{"ref":"refs/heads/featureA","sha":"aa218f56b14c9653891f9e74264a383fa43fefbd"}'
-  
+
