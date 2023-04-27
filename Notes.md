@@ -178,3 +178,4 @@ $ SLACK=https://hooks.slack.com/services/T0553GYMMN0/B0550EFKLHL/rArFglBsHEbEO4b
 $ kubectl -n flux-system create secret generic slack-url \
 --from-literal=address=${SLACK}
 ```
+
