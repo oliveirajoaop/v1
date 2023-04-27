@@ -121,6 +121,19 @@ helm install <chart_name> <chart_link>
     - fix (fix will bump the third digit 0.0.X, which is the fix version)
     - docs (????)
 
+## Initial commit with tags
+
+```bash
+# Add a tag and comment (Optional)
+git tag -a v0.1.0 -m "Initial tagging"
+# List existing tags
+git tag --list
+# Push tag release to the repo
+git push --tags
+```
+
+- To see how the below command will work
+
 ```bash
 git push --follow-tags origin main
 ```
