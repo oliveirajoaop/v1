@@ -16,6 +16,7 @@ BRANCH=
 KUBE_VERSION=v1.25.3
 PASSWORD=
 SECRET=flux-ssh
+SLACK=
 ...
 ```
 
@@ -110,7 +111,12 @@ flux reconcile kustomization flux-system --with-source
 ```bash
 cat ./clusters/k8s/workflows/nginx2.yaml
 ```
-10) notifications 
+10) notifications
+
+```bash
+kubectl -n flux-system create secret generic slack-url \
+--from-literal=address=${SLACK}
+```
 
 11) tag system 
 
@@ -118,8 +124,9 @@ cat ./clusters/k8s/workflows/nginx2.yaml
 
 13) disaster recovery 
 
+run the bootstrap again and it shoud install all manifests 
 
-14) create manidfests using cli 
+14) create manifests using cli 
 
 example:
 
@@ -134,11 +141,22 @@ flux create source helm mychart  \
   --export > repository.yaml
 ```
 
-
+15) multitenancy 
 
 
 notes: 
 helm sources can be git, helmrepo, s3 
 
 ref: 
+
 https://www.youtube.com/watch?v=r_vKf5l1D1M&t=2560s
+
+https://devopscube.com/build-docker-image/
+
+https://helm.sh/docs/chart_template_guide/accessing_files/
+
+https://fluxcd.io/flux/
+
+https://github.com/weaveworks/weave-gitops
+
+https://fluxcd.io/flux/guides/notifications/

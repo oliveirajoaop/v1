@@ -1,5 +1,3 @@
-
-349 bytes
 # Patterns to ignore when building packages.
 # This supports shell glob matching, relative path matching, and
 # negation (prefixed with !). Only one pattern per line.
@@ -23,10 +21,3 @@
 .idea/
 *.tmproj
 .vscode/
-.env
-identity
-identity.pub
-charts
-Notes.md
-Transfer
-flux
