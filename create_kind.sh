@@ -20,3 +20,4 @@ if [ ! -d ${MY_REPOSITORY} ]; then
   else
     echo "the ${MY_REPOSITORY} was already cloned !"
 fi
+
