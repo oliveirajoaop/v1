@@ -160,6 +160,15 @@ git push --tags
 git push --follow-tags origin main
 ```
 
+## Tags Usage
+
+```bash
+# The tags usage is very simple just append Major, Minor, Patch or None to your commit message
+# Example below
+git add . && git commit -m "New Minor version release 0.1.0 #Minor"
+git push
+```
+
 ## Understanding Semantic Versioning
 
 - Format will be Major.Minor.Patch and also alpha/beta (not production ready) (X.X.X-alpha)
