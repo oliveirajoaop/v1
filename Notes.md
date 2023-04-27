@@ -125,7 +125,7 @@ helm install <chart_name> <chart_link>
 
 ```bash
 # Add a tag and comment (Optional)
-git tag -a v0.1.0 -m "Initial tagging"
+git tag -a 0.0.0 -m "Initial tagging"
 # List existing tags
 git tag --list
 # Push tag release to the repo
