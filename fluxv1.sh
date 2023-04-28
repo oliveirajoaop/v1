@@ -39,5 +39,3 @@ helm upgrade -i helm-operator fluxcd/helm-operator \
 --namespace flux
 
 fluxctl sync --k8s-fwd-ns flux
-
-
