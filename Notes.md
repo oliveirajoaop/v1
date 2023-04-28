@@ -181,7 +181,7 @@ git push
   - #patch (0.0.1)
     - Backwards compatible
     - Bug fixes
-  - #none (will not create tags)
+  - #norelease or #none (will not create tags)
 
 ## Notes:
 
