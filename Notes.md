@@ -154,7 +154,7 @@ git tag --list
 git push --tags
 ```
 
-- To see how the below command will work
+- See if/how the below command will work
 
 ```bash
 git push --follow-tags origin main
