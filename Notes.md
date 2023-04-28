@@ -221,4 +221,3 @@ curl -L \
   https://api.github.com/repos/oliveirajoaop/v1/git/refs \
   -d '{"ref":"refs/heads/featureA","sha":"aa218f56b14c9653891f9e74264a383fa43fefbd"}'
 
-
