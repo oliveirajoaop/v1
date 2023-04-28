@@ -172,15 +172,16 @@ git push
 ## Understanding Semantic Versioning
 
 - Format will be Major.Minor.Patch and also alpha/beta (not production ready) (X.X.X-alpha)
-  - Major (1.0.0)
+  - #major (1.0.0)
     - Incompatible with previous versions
     - Fundaqtional changes
-  - Minor (0.1.0)
+  - #minor (0.1.0)
     - Adding functionallity
     - Backwards compatible
-  - Patch (0.0.1)
+  - #patch (0.0.1)
     - Backwards compatible
     - Bug fixes
+  - #none (will not create tags)
 
 ## Notes:
 
@@ -219,4 +220,5 @@ curl -L \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/oliveirajoaop/v1/git/refs \
   -d '{"ref":"refs/heads/featureA","sha":"aa218f56b14c9653891f9e74264a383fa43fefbd"}'
+
 
