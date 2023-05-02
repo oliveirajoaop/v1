@@ -42,6 +42,10 @@ SLACK=
 
 3) scale down the flux operator and flux to 0 replicas 
 
+```bash
+k scale deployment -n flux --replicas 0  --all 
+```
+
 4) reconcilie 
 
 ```bash
@@ -83,8 +87,8 @@ flux reconcile kustomization flux-system --with-source
 
 ```bash
 helm uninstall helm-operator -n flux 
-kubectl delete crd helmreleases.helm.fluxcd.io
 helm uninstall flux -n flux
+kubectl delete crd helmreleases.helm.fluxcd.io
 kubectl delete namespace flux  
 ```
 
@@ -173,8 +177,15 @@ https://fluxcd.io/flux/guides/notifications/
 
 https://fluxcd.io/flux/guides/image-update/
 
+remove demo: 
 
-proccess: 
+```bash
+rm -fr ./flux/clusters/demo 
+kind delete cluster --name demo
+```
+
+
+TODO proccess: 
 1) deploy descale to 0 operator
 2) deploy descale to 0 flux
 3) helm install fluxv2

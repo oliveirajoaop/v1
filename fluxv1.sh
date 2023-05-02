@@ -24,7 +24,7 @@ gh repo deploy-key add ../identity.pub -w -t fluxv1
 
 
 helm upgrade -i flux fluxcd/flux \
---set git.url=git@github.com:Orpere/${MY_REPOSITORY} \
+--set git.url=git@github.com:${USER}/${MY_REPOSITORY} \
 --set git.secretName=${SECRET} \
 --set git.secretDataKey=identity \
 --set git.path=fluxv1 \

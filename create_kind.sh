@@ -16,7 +16,7 @@ nodes:
 EOF
 
 if [ ! -d ${MY_REPOSITORY} ]; then
-    gh repo clone Orpere/flux
+    gh repo clone ${GITHUB_USER}/flux
   else
     echo "the ${MY_REPOSITORY} was already cloned !"
 fi
