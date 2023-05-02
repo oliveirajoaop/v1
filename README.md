@@ -34,7 +34,7 @@ SLACK=
 ./fluxv1.sh
 ```
 
-3) install flu v2 
+3) install flux v2 
 
 ```bash
 ./fluxv2.sh 
@@ -93,13 +93,13 @@ kubectl delete namespace flux
 ```
 
 
-7) scale up the flux deployment and sinc 
+7) scale up the flux deployment and sync 
 
 ```bash
  fluxctl sync --k8s-fwd-ns flux
 ```
 
-8) ccheck the test-configmap 
+8) check the test-configmap 
 
 ```
 │ Name:         test-configmap                                                                                                                                                                     │
@@ -120,7 +120,7 @@ kubectl delete namespace flux
 │                                                                                                                                                                                                  │
 │ Events:  <none>
 ```
-9) deploy a helm chart with extra paramters on flux v1 e fluxv2 
+9) deploy a helm chart with extra parameters on flux v1 e fluxv2 
 
 ```bash
 cat ./clusters/k8s/workflows/nginx2.yaml
