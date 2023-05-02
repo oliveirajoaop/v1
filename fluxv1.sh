@@ -24,10 +24,10 @@ gh repo deploy-key add ../identity.pub -w -t fluxv1
 
 
 helm upgrade -i flux fluxcd/flux \
---set git.url=git@github.com:oliveirajoaop/${MY_REPOSITORY} \
+--set git.url=git@github.com:Orpere/${MY_REPOSITORY} \
 --set git.secretName=${SECRET} \
 --set git.secretDataKey=identity \
---set git.path=kubernetes \
+--set git.path=fluxv1 \
 --set git.branch=main \
 --set createCRD=true \
 --set memcached.enabled=false \
@@ -39,3 +39,5 @@ helm upgrade -i helm-operator fluxcd/helm-operator \
 --namespace flux
 
 fluxctl sync --k8s-fwd-ns flux
+
+

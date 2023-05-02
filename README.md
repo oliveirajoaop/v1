@@ -79,6 +79,16 @@ flux reconcile kustomization flux-system --with-source
 
 ```
 
+    uninstall flux v1
+
+```bash
+helm uninstall helm-operator -n flux 
+kubectl delete crd helmreleases.helm.fluxcd.io
+helm uninstall flux -n flux
+kubectl delete namespace flux  
+```
+
+
 7) scale up the flux deployment and sinc 
 
 ```bash
@@ -120,7 +130,7 @@ kubectl -n flux-system create secret generic slack-url \
 
 11) tag system 
 
-12) image management
+12) image automation 
 
 13) disaster recovery 
 
@@ -160,3 +170,17 @@ https://fluxcd.io/flux/
 https://github.com/weaveworks/weave-gitops
 
 https://fluxcd.io/flux/guides/notifications/
+
+https://fluxcd.io/flux/guides/image-update/
+
+
+proccess: 
+1) deploy descale to 0 operator
+2) deploy descale to 0 flux
+3) helm install fluxv2
+4) migrate the objects from v1 to v2 
+5) helm uninstall helm-operator 
+6) delete crd helmreleases.helm.fluxcd.io
+7) helm uninstall fluxv1
+8) delete namespace fluxv1 namespace
+

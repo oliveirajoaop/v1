@@ -16,7 +16,29 @@ nodes:
 EOF
 
 if [ ! -d ${MY_REPOSITORY} ]; then
-    gh repo clone oliveirajoaop/flux
+    gh repo clone Orpere/flux
   else
     echo "the ${MY_REPOSITORY} was already cloned !"
 fi
+
+rm -f identity*
+
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+sleep 90 
+
+kubectl apply -f - <<EOF
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: example
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.20.25.200-172.20.25.250
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: empty
+  namespace: metallb-system
+EOF
