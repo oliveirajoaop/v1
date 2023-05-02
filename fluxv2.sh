@@ -9,7 +9,7 @@ flux bootstrap github --owner=${GITHUB_REPOSITORY_OWNER} \
   --components-extra=image-reflector-controller,image-automation-controller \
   --repository=${MY_REPOSITORY} \
   --secret-name=${SECRET} \
-  --path=./clusters/${MY_CLUSTER}/ \
+  --path=./fluxv2/${MY_CLUSTER}/ \
   --branch=${BRANCH} \
   --personal \
   --private=true

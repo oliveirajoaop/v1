@@ -177,10 +177,26 @@ https://fluxcd.io/flux/guides/notifications/
 
 https://fluxcd.io/flux/guides/image-update/
 
+create demo:
+
+```bash
+git submodule update --recursive --remote
+cp -R flux/v2-manifests/* flux/fluxv2/demo/.
+cd flux 
+git add . 
+git commit -m "add demo"
+git push -f origin HEAD:main
+```
+
+
 remove demo: 
 
 ```bash
-rm -fr ./flux/clusters/demo 
+cd flux 
+rm -fr fluxv2
+git add . 
+git commit -m "remove demo"
+git push -f origin HEAD:main
 kind delete cluster --name demo
 ```
 
@@ -194,4 +210,5 @@ TODO proccess:
 6) delete crd helmreleases.helm.fluxcd.io
 7) helm uninstall fluxv1
 8) delete namespace fluxv1 namespace
+
 
